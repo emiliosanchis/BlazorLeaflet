@@ -193,6 +193,10 @@ window.leafletBlazor = {
             maxZoom: maxZoom
         });
     },
+    setView: function (mapId, center, zoom) {
+        const centerLL = L.latLng(center.x, center.y);
+        maps[mapId].setView(centerLL, zoom);
+    },
     panTo: function (mapId, position, animate, duration, easeLinearity, noMoveStart) {
         const pos = L.latLng(position.x, position.y);
         maps[mapId].panTo(pos, {
